@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.total-score-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 5em;
+}
+.total-score-container > p{
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+.row{
+    display: flex;
+}
+.row p:nth-child(1){
+    width: 600px;
+    height: 60px;
+}
+.row p:nth-child(2){
+    width: 150px;
+}
+.row p:nth-child(3){
+    width: 150px;
+}
+.row * {
+    padding: 1em;
+    border: 1px solid white;
+}
+.success {
+    background-color: green;
+}
+.fail {
+    background-color: red;
+}

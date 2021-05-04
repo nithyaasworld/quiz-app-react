@@ -1,0 +1,24 @@
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 1em;
+}
+li{
+    border: 1px solid white;
+    padding: 1em;
+}
+.correct{
+    background-color: green;
+}
+.incorrect{
+    background-color: red;
+}
+.quiz-container{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.quiz-container ul li {
+    min-width: 150px;
+}
