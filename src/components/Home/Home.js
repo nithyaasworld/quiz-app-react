@@ -2,6 +2,7 @@ import QuizQuestion from "../QuizQuestion/QuizQuestion";
 import { useState } from 'react';
 import './Home.css';
 import { useHistory } from "react-router";
+import ProgressBar from '../ProgressBar/ProgressBar'
 
 export default function Home() {
     const history = useHistory();
@@ -15,8 +16,14 @@ export default function Home() {
         { id: 4, question: "The pureset form of iron is", choices: ['Rusted iron', 'Wrought iron', 'sand iron', 'iron He'], answer: 1 }]
     let [currQuestion, setCurrQuestion] = useState(0);
     let [allScores, setAllScores] = useState([]);
+    let [progressValue, setProgressValue] = useState(100);
+
+    let changeProgressValue = () => {
+        setProgressValue((p) => p - 1);
+    }
+
     let incrementQuestion = () => {
-        
+        setProgressValue(100);
         if (currQuestion < 4) {
             setCurrQuestion(currQuestion + 1);
         } else {
@@ -36,6 +43,7 @@ export default function Home() {
 return (
     <div className="quiz-container">
         <QuizQuestion addScore={ addScore } incrementQuestion = {incrementQuestion} question={questions[currQuestion].question} choices={questions[currQuestion].choices} answer={questions[currQuestion].answer} />
+        <ProgressBar progressVal={progressValue} changeProgressValue = {changeProgressValue} addScore={ addScore } incrementQuestion = {incrementQuestion}/>
     </div>
     )
 }
